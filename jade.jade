@@ -1,0 +1,99 @@
+!!! 5
+html
+  head
+    title Jade Cheat Sheet v 0.1
+  body(style:"font-size:12px")
+    div(style:"padding:0;border:1px black double;width:90%")
+      div(style:"padding:0")
+        p(style:"font-size:20px")
+          a(style:"text-decoration:none;color:green",href:"http://jade-lang.com")
+            < JADE >
+        | Jade is a high performance template engine
+        | heavily influenced by
+        a(style:"text-decoration:none;color:green",href:"http://haml-lang.com")
+          | Haml
+        | and implemented with JavaScript for Node.        
+      div(style:"float:left;padding:1px;width:49%;border:solid 1px black;")
+        div(style="float:left;width:100%;")
+          h1(style:"padding:0;font-size:12px;background:gray;color:white;") Line Endings
+          | CRLF and CR are converted to LF before parsing.
+        div(style="float:left;width:100%;border:1px black solid;")
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Indentation
+          | Jade is indentation based, however currently only supports 2 <emphasis>space</emphasis> indent.
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Tags
+          | A tag is simply a leading word:
+          DL
+            DT html
+            DD renders to &lt;html&gt;&lt;/html&gt;
+            DT div#container and #container
+            DD renders to &lt;div id="container"&gt;&lt;/div&gt;
+            DT div.user and .user
+            DD renders to &lt;div class="user"&gt;&lt;/div&gt;
+            DT p wahoo!
+            DD renders to &lt;p&gt;wahoo!&lt;/p&gt;
+            DT long bodies of text begin with a pipe
+            DD | foo bar
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Interpolation
+          | \#{var} marks interpolation of passed local variables
+          br
+          | Pass {locals:{name:'tj',email:'tj@vision-media.ca'}}
+          | to render,
+          br
+          | #user \#{name } &lt;\#{email}&gt; outputs:
+          br
+          | &lt;div id="user"&gt;tj &lt;tj@vision-media.ca&gt;&lt;/div&gt;
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Doctypes
+          | Use !!! followed by an optional value:
+          ul
+            li 5
+            li xml
+            li default
+            li transitional
+            li strict
+            li frameset
+            li 1.1
+            li basic
+            li mobile
+          | or define your own jade.doctypes.default = 'whatever';
+      div(style="float:right;padding:1px;width:49%;border:solid 1px black")
+        div(style="float:left;width:100%;border 1px black solid;")
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Template
+          |!!! &lt;DOCTYPE&gt;<br/>
+          |html
+          |&nbsp;&nbsp;head<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;title Jade Cheat Sheet<br/>
+          |&nbsp;&nbsp;body<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;#container<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#head<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#content<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#menu<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#footer<br/>
+          |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Copyright (c) 2010
+          br
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Comments
+          | Single line comments look the same as JavaScript comments
+          DL
+            DT \/\/ a single line comment
+            DD renders as &lt;!-- a single line comment--&gt;
+            DT \/\/- adding a hyphen will not output to markup
+            DD
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Nesting
+          | Nesting is supported by indentation
+          br
+          | ul
+          br
+          | &nbsp;&nbsp;li one
+          br
+          | &nbsp;&nbsp;li two
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Attributes
+          | Jade supports parentheses as attribute delimiters
+          br
+          | And either a colon or equal sign to separate pairs:
+          br
+          | a(href='/login', title='View login') Login
+          br
+          | a(href:'/login', title='View login') Login
+          H1(style:"padding:0;font-size:12px;background:gray;color:white;") Boolean Attributes
+          | Boolean attributes are supported and output when true
+          br
+          | input(type:"checkbox", checked)
