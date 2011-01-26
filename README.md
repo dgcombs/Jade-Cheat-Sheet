@@ -11,4 +11,4 @@ more examples of the requirements, they would be right there.
 * [Node](http://www.nodejs.com)
 * [Jade](http://www.jade-lang.org)
 
-And that's all there is to it!
+And, my fine friends, that's all there is to it!
