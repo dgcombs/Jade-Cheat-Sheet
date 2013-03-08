@@ -8,7 +8,7 @@ Of course, it struck me as obvious that the most sensible way to
 define a cheat sheet would be to write it *IN* Jade so if I needed
 more examples of the requirements, they would be right there.
 
-* [Node](http://www.nodejs.com)
-* [Jade](http://www.jade-lang.org)
+* [Node](http://www.nodejs.org)
+* [Jade](http://www.jade-lang.com)
 
 And, my fine friends, that's all there is to it!
